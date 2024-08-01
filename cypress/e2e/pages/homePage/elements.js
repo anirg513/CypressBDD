@@ -1,6 +1,5 @@
 module.exports = {
     HOMEPAGE:{
-        HOME_PAGE_HEADING: "h1[data-test='app-name-logo']",
-        USERNAME_LABEL: "h6[data-test='sidenav-username']"
+        HOME_PAGE_HEADING: "span[class='base']"
     }
 }

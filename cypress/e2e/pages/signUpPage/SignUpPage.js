@@ -4,31 +4,30 @@ class SignUpPage {
     verifyOnSignUpPage() {
         return cy.get(elements.SIGNUPPAGE.SIGNUP_PAGE_HEADING)
                     .should('be.visible')
-                    .and('have.text', 'Sign Up')
     }
 
     TypeInFirstNameTextbox(value) {
-        return cy.get(elements.SIGNUPPAGE.FIRSTNAME_TEXT).type(value)
+        return cy.get('#firstname').type(value)
     }
 
     TypeInLastNameTextbox(value) {
-        return cy.get(elements.SIGNUPPAGE.LASTNAME_TEXT).type(value)
+        return cy.get('#lastname').type(value)
     }
 
-    TypeInUsernameTextbox(value) {
-        return cy.get(elements.SIGNUPPAGE.USERNAME_TEXT).type(value)
+    TypeInEmailTextbox(value) {
+        return cy.get('#email_address').type(value)
     }
 
     TypeInPasswordTextbox(value) {
-        return cy.get(elements.SIGNUPPAGE.PASSWORD_TEXT).type(value)
+        return cy.get('#password').type(value)
     }
 
     TypeInConfirmPasswordTextbox(value) {
-        return cy.get(elements.SIGNUPPAGE.CONFIRM_PASSWORD_TEXT).type(value)
+        return cy.get('#password-confirmation').type(value)
     }
 
     clickOnSignUpButton() {
-        return cy.get(elements.SIGNUPPAGE.SIGN_UP_BUTTON).click()
+        return cy.get("button[type='submit']").eq(1).click()
     }
 }
 

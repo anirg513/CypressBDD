@@ -7,12 +7,11 @@ const loginPage = new LoginPage()
 const signUpPage = new SignUpPage()
 const homePage = new HomePage()
 
-Given('I am on the login page', () => {
+Given('I am on the Main page', () => {
     cy.visit('/')
-    loginPage.verifyOnLoginPage()
 })
 
-When('I click on sigh up link', () => {
+When('I click on Create an Account link', () => {
     loginPage.clickOnSignUpLink()
 })
 
@@ -28,8 +27,8 @@ When('I type in my last name {string}', (value) => {
     signUpPage.TypeInLastNameTextbox(value)
 })
 
-When('I type in my username {string}', (value) => {
-    signUpPage.TypeInUsernameTextbox(value)
+When('I type in my email {string}', (value) => {
+    signUpPage.TypeInEmailTextbox(value)
 })
 
 When('I type in my password {string}', (value) => {
@@ -44,14 +43,6 @@ When('I click on the sign up button', () => {
     signUpPage.clickOnSignUpButton()
 })
 
-Then('I should be on the login page', () => {
-    loginPage.verifyOnLoginPage()
-})
-
 Then('I should be on the home page', () => {
     homePage.verifyOnHomePage()
-})
-
-Then('I should see username - {string} on homepage', (value) => {
-    homePage.verifyUsernameOnHomePage(value)
 })

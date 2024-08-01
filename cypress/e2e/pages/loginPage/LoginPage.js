@@ -16,16 +16,12 @@ class LoginPage {
         return cy.get(elements.LOGINPAGE.PASSWORD_TEXT).type(value)
     }
 
-    checkRememberMeCheckbox() {
-        return cy.get(elements.LOGINPAGE.REMEMBER_ME_CHECKBOX).check()
-    }
-
     clickOnSignInButton() {
         return cy.get(elements.LOGINPAGE.SIGN_IN_BUTTON).click()
     }
 
     clickOnSignUpLink() {
-        return cy.get(elements.LOGINPAGE.SIGN_UP_LINK).click()
+        return cy.get('.panel > .header > :nth-child(3) > a').click()
     }
 }
 

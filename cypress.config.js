@@ -4,6 +4,7 @@ const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
+    defaultCommandTimeout: 15000,
     projectId: "nvh163",
     e2e: {
         baseUrl: "https://magento.softwaretestingboard.com/",

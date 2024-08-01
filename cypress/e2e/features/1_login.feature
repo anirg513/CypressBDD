@@ -1,7 +1,7 @@
 Feature: Login
 
   Scenario Outline: Login with created user
-    Given I am on the login page
+    Given I am on the home page
     When I type in my username "<username>"
     When I type in my password "<password>"
     When I click on the sign up button
