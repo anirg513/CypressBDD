@@ -12,9 +12,21 @@ Feature: Signup
     When I click on the sign up button
     Then I should be on the home page
     When I click on the arrow
-    And I click on the signout button
+    Then I click on the signout button
     Then user is signed out
 
     Examples:
       | first_name | last_name | email | password | confirm_password |
-      | John       | Doe       | test98706@test.com  | HelloWorld@123| HelloWorld@123 |
+      | John       | Doe       | test21@test.com  | HelloWorld@123| HelloWorld@123 |
+
+  Scenario Outline: Login with created user
+    Given I am on the Main page
+    When I click on Sign In link
+    When I type in my email id "<email>"
+    When I type in my password generated "<password>"
+    When I click on the sign in button
+    Then I should be on the home page
+
+    Examples:
+      | email | password |
+      | test21@test.com  | HelloWorld@123 |

@@ -5,24 +5,29 @@ class LoginPage {
     verifyOnLoginPage() {
         return cy.get(elements.LOGINPAGE.LOGIN_PAGE_HEADING)
                     .should('be.visible')
-                    .and('have.text', 'Sign in')
     }
 
-    typeInUsernameTextbox(value) {
-        return cy.get(elements.LOGINPAGE.USERNAME_TEXT).type(value)
+    
+    typeInEmailTextbox(value) {
+        return cy.get('#email').type(value)
     }
 
     typeInPasswordTextbox(value) {
-        return cy.get(elements.LOGINPAGE.PASSWORD_TEXT).type(value)
+        return cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type(value)
     }
 
     clickOnSignInButton() {
-        return cy.get(elements.LOGINPAGE.SIGN_IN_BUTTON).click()
+        return cy.get("button[type='submit']").eq(1).click()
     }
 
     clickOnSignUpLink() {
-        return cy.get('.panel > .header > :nth-child(3) > a').click()
+        return cy.get("a[href='https://magento.softwaretestingboard.com/customer/account/create/']").eq(0).click()
     }
+
+    clickOnSignInLink() {
+        return cy.get('.panel > .header > .authorization-link > a').click()
+    }
+
 }
 
 export default LoginPage
